@@ -8,7 +8,7 @@
  */
 
 import { Transmit } from '@boringnode/transmit'
-import type { Route } from '@adonisjs/core/http'
+import type { HttpContext, Route } from '@adonisjs/core/http'
 import type { TransmitConfig } from '@boringnode/transmit/types'
 import type { HttpRouterService } from '@adonisjs/core/types'
 import type { Transport } from '@boringnode/bus/types/main'
@@ -17,7 +17,7 @@ const EventStreamController = () => import('./controllers/event_stream_controlle
 const SubscribeController = () => import('./controllers/subscribe_controller.js')
 const UnsubscribeController = () => import('./controllers/unsubscribe_controller.js')
 
-export class TransmitAdonisAdapter extends Transmit {
+export class TransmitAdonisAdapter extends Transmit<HttpContext> {
   #router: HttpRouterService
 
   constructor(config: TransmitConfig, router: HttpRouterService, transport?: Transport | null) {
