@@ -82,7 +82,7 @@
   "prettier": "@adonisjs/prettier-config",
   "publishConfig": {
     "access": "public",
-    "tag": "latest"
+    "tag": "next"
   },
   "release-it": {
     "git": {
