@@ -24,6 +24,7 @@ export default class EventStreamController {
       context: ctx,
       request: ctx.request.request,
       response: ctx.response.response,
+      injectResponseHeaders: ctx.response.getHeaders(),
     })
 
     return ctx.response.stream(stream)
