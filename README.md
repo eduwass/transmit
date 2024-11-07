@@ -99,7 +99,7 @@ You can mark a channel as private and then authorize the client to subscribe to 
 
 import type { HttpContext } from '@adonisjs/core/http'
 
-transmit.authorizeChannel<{ id: string }>('users/:id', (ctx: HttpContext, { id }) => {
+transmit.authorize<{ id: string }>('users/:id', (ctx: HttpContext, { id }) => {
   return ctx.auth.user?.id === +id
 })
 ```
